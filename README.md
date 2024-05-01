@@ -1,5 +1,5 @@
 # FloopyBird
-My first Unity project! 
+My first Unity project and my first step in developing my own game! 
 
 Full credit to Mark Brown and his amazing youtube channel Game Maker's ToolKit: https://www.youtube.com/@GMTK. I am following their youtube tutorial here: https://www.youtube.com/watch?v=XtQMytORBmM.
 
