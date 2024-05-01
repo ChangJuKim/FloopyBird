@@ -5,7 +5,7 @@ Full credit to Mark Brown and his amazing youtube channel Game Maker's ToolKit: 
 
 I am now making additional changes to the game so I can better learn Unity.
 
-**This game only runs on Windows.**
+**As of now, this game only runs on Windows. I will add support for Mac and Linux in the future.**
 
 ## Installation
 1. Go to https://drive.google.com/drive/folders/1__excmrXzOrz2GQzizv2UQcXUhKYe_q7?usp=sharing
