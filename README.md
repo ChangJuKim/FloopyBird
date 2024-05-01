@@ -5,11 +5,11 @@ Full credit to Mark Brown and his amazing youtube channel Game Maker's ToolKit: 
 
 I am now making additional changes to the game so I can better learn Unity.
 
-This game runs on Windows. I am unsure if it runs on Mac or Linux.
+**This game only runs on Windows.**
 
 ## Installation
 1. Go to https://drive.google.com/drive/folders/1__excmrXzOrz2GQzizv2UQcXUhKYe_q7?usp=sharing
-2. Go to the folder with the latest version (as of 5/1/2024: v1.1.0). Go to your os platform.
+2. Go to the folder with the latest version (as of 5/1/2024: v1.1.0).
 3. Download zip folder and extract zip folder to a location of your choice
 5. Run Floopy Bird.exe
 
