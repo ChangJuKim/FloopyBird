@@ -9,9 +9,8 @@ This game runs on Windows. I am unsure if it runs on Mac or Linux.
 
 ## Installation
 1. Go to https://drive.google.com/drive/folders/1__excmrXzOrz2GQzizv2UQcXUhKYe_q7?usp=sharing
-2. Go to the folder with the latest version (as of 5/1/2024: v1.1.0)
-3. Download zip folder
-4. Extract zip folder to a location of your choice
+2. Go to the folder with the latest version (as of 5/1/2024: v1.1.0). Go to your os platform.
+3. Download zip folder and extract zip folder to a location of your choice
 5. Run Floopy Bird.exe
 
 ## Controls
