@@ -6,9 +6,9 @@ public class BirdScript : MonoBehaviour
 {
     public Rigidbody2D myRigidBody;
     public LogicScript logic;
+    private bool birdIsAlive = true;
     private float flapStrength = 20;
     private float gravityStrength = 4.5F;
-    private bool birdIsAlive = true;
     private float deadZoneTop = 21;
     private float deadZoneBottom = -13;
 
@@ -29,6 +29,11 @@ public class BirdScript : MonoBehaviour
         {
             myRigidBody.velocity = Vector2.up * flapStrength;
         }
+    }
+
+    public bool isAlive()
+    {
+        return birdIsAlive;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
