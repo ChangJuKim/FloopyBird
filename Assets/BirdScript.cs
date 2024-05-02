@@ -5,10 +5,12 @@ using UnityEngine;
 public class BirdScript : MonoBehaviour
 {
     public Rigidbody2D myRigidBody;
+    public LogicScript logic;
     private float flapStrength = 20;
     private float gravityStrength = 4.5F;
-    public LogicScript logic;
     private bool birdIsAlive = true;
+    private float deadZoneTop = 21;
+    private float deadZoneBottom = -13;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +22,9 @@ public class BirdScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (checkOutOfBounds()) {
+            endGame();
+        }
         if (Input.GetKeyDown(KeyCode.Space) && birdIsAlive)
         {
             myRigidBody.velocity = Vector2.up * flapStrength;
@@ -27,6 +32,17 @@ public class BirdScript : MonoBehaviour
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
+    {
+        endGame();
+    }
+
+    private bool checkOutOfBounds()
+    {
+        return transform.position.y > deadZoneTop || transform.position.y < deadZoneBottom;
+
+    }
+
+    private void endGame()
     {
         logic.gameOver();
         birdIsAlive = false;
