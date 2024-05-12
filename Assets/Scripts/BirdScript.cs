@@ -49,7 +49,7 @@ public class BirdScript : MonoBehaviour
 
     private void endGame()
     {
-        logic.gameOver();
+        logic.GameOver();
         birdIsAlive = false;
     }
 }

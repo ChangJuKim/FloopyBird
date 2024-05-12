@@ -14,7 +14,7 @@ public class LogicScript : MonoBehaviour
     public AudioSource audioSource;
 
     [ContextMenu("Increase Score")]
-    public void addScore(int scoreToAdd)
+    public void AddScore(int scoreToAdd)
     {
         if (bird.isAlive())
         {
@@ -24,13 +24,18 @@ public class LogicScript : MonoBehaviour
         }
     }
 
-    public void restartGame()
+    public void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    public void gameOver()
+    public void GameOver()
     {
         gameOverScreen.SetActive(true);
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 }
