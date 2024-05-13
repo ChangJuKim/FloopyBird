@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class PipeMiddleScript : MonoBehaviour
 {
-
-    public LogicScript logic;
+    [SerializeField] private LogicScript logic;
     private int BIRD_LAYER = 3;
 
     // Start is called before the first frame update

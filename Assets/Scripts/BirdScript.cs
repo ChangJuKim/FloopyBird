@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class BirdScript : MonoBehaviour
 {
-    public Rigidbody2D myRigidBody;
-    public LogicScript logic;
+    [SerializeField] private Rigidbody2D myRigidBody;
+    [SerializeField] private LogicScript logic;
     private bool birdIsAlive = true;
     private float flapStrength = 20;
     private float gravityStrength = 4.5F;

@@ -7,11 +7,11 @@ using UnityEngine.SceneManagement;
 public class LogicScript : MonoBehaviour
 {
 
-    public int playerScore;
-    public Text scoreText;
-    public GameObject gameOverScreen;
-    public BirdScript bird;
-    public AudioSource audioSource;
+    [SerializeField] private Text scoreText;
+    [SerializeField] private GameObject gameOverScreen;
+    [SerializeField] private BirdScript bird;
+    [SerializeField] private AudioSource audioSource;
+    private int playerScore;
 
     [ContextMenu("Increase Score")]
     public void AddScore(int scoreToAdd)
