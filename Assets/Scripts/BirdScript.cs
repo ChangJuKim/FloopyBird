@@ -7,7 +7,7 @@ public class BirdScript : MonoBehaviour
     [SerializeField] private Rigidbody2D myRigidBody;
     [SerializeField] private LogicScript logic;
     private bool birdIsAlive = true;
-    private bool classicFlight = true;
+    private bool classicFlight;
     private float flapStrength, gravityStrength;
 
     // Start is called before the first frame update
@@ -38,7 +38,7 @@ public class BirdScript : MonoBehaviour
 
     private void getFromConstants()
     {
-        classicFlight = !bool.Parse(PlayerPrefs.GetString(Constants.FREE_FLIGHT_KEY));
+        classicFlight = !bool.Parse(PlayerPrefs.GetString(Constants.IS_FF_KEY));
 
         if (classicFlight)
         {

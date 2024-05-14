@@ -5,10 +5,12 @@ using UnityEngine;
 
 public class StatsScript : MonoBehaviour
 {
-    public TMP_Text highScoreText;
+    public TMP_Text classicHighScoreText;
+    public TMP_Text ffHighScoreText;
 
     void OnEnable()
     {
-        highScoreText.SetText("High Score: " + PlayerPrefs.GetInt(Constants.HIGH_SCORE_KEY));
+        classicHighScoreText.SetText("Classic High Score: " + PlayerPrefs.GetInt(Constants.CLASSIC_HIGH_SCORE_KEY));
+        ffHighScoreText.SetText("Free Flight High Score: " + PlayerPrefs.GetInt(Constants.FF_HIGH_SCORE_KEY));
     }
 }

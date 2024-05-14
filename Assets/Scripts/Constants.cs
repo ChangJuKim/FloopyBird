@@ -5,9 +5,10 @@ using UnityEngine;
 public static class Constants
 {
     // Settings
-    public const string HIGH_SCORE_KEY = "High Score";
+    public const string CLASSIC_HIGH_SCORE_KEY = "Classic High Score";
+    public const string FF_HIGH_SCORE_KEY = "Free Flight High Score";
     public const string VOLUME = "Volume";
-    public const string FREE_FLIGHT_KEY = "Free Flight";
+    public const string IS_FF_KEY = "Is Free Flight";
     
     // Values
     public const string TRUE = "true";

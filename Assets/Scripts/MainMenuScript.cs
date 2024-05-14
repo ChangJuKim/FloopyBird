@@ -18,8 +18,12 @@ public class MainMenuScript : MonoBehaviour
         Application.Quit();
     }
 
-    public void DeleteHighScore()
+    public void DeleteClassicHighScore()
     {
-        PlayerPrefs.DeleteKey(Constants.HIGH_SCORE_KEY);
+        PlayerPrefs.DeleteKey(Constants.CLASSIC_HIGH_SCORE_KEY);
+    }
+    public void DeleteFFHighScore()
+    {
+        PlayerPrefs.DeleteKey(Constants.FF_HIGH_SCORE_KEY);
     }
 }

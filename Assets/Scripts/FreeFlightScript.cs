@@ -10,9 +10,9 @@ public class FreeFlightScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (!PlayerPrefs.HasKey(Constants.FREE_FLIGHT_KEY))
+        if (!PlayerPrefs.HasKey(Constants.IS_FF_KEY))
         {
-            PlayerPrefs.SetString(Constants.FREE_FLIGHT_KEY, false.ToString());
+            PlayerPrefs.SetString(Constants.IS_FF_KEY, false.ToString());
         }
         Load();
     }
@@ -25,11 +25,11 @@ public class FreeFlightScript : MonoBehaviour
 
     private void Load()
     {
-        freeFlightToggle.isOn = bool.Parse(PlayerPrefs.GetString(Constants.FREE_FLIGHT_KEY));
+        freeFlightToggle.isOn = bool.Parse(PlayerPrefs.GetString(Constants.IS_FF_KEY));
     }
 
     private void Save()
     {
-        PlayerPrefs.SetString(Constants.FREE_FLIGHT_KEY, freeFlightToggle.isOn.ToString());
+        PlayerPrefs.SetString(Constants.IS_FF_KEY, freeFlightToggle.isOn.ToString());
     }
 }

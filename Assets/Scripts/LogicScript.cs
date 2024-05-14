@@ -14,10 +14,12 @@ public class LogicScript : MonoBehaviour
     [SerializeField] private AudioSource audioSource;
     private int playerScore;
     private int previousHighScore;
+    private string highScoreKey;
 
     private void Start()
     {
-        previousHighScore = PlayerPrefs.GetInt(Constants.HIGH_SCORE_KEY);
+        highScoreKey = !bool.Parse(PlayerPrefs.GetString(Constants.IS_FF_KEY)) ? Constants.CLASSIC_HIGH_SCORE_KEY : Constants.FF_HIGH_SCORE_KEY;
+        previousHighScore = PlayerPrefs.GetInt(highScoreKey);
     }
 
     [ContextMenu("Increase Score")]
@@ -50,9 +52,9 @@ public class LogicScript : MonoBehaviour
 
     private void UpdateHighScore(int score)
     {
-        if (score > PlayerPrefs.GetInt(Constants.HIGH_SCORE_KEY))
+        if (score > PlayerPrefs.GetInt(highScoreKey))
         {
-            PlayerPrefs.SetInt(Constants.HIGH_SCORE_KEY, score);
+            PlayerPrefs.SetInt(highScoreKey, score);
         }
     }
 }
