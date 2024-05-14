@@ -17,4 +17,9 @@ public class MainMenuScript : MonoBehaviour
         Debug.Log("Quit game");
         Application.Quit();
     }
+
+    public void DeleteHighScore()
+    {
+        PlayerPrefs.DeleteKey(Constants.HIGH_SCORE_KEY);
+    }
 }
