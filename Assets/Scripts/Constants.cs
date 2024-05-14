@@ -14,12 +14,18 @@ public static class Constants
     public const string FALSE = "false";
 
     // World stats
-    public const float CLASSIC_GRAVITY = 4.5f;
-    public const float FREE_FLIGHT_GRAVITY = 0;
-    public const float SCREEN_HEIGHT = 25;
-    public const float SCREEN_WIDTH = 45;
+    public const float DEAD_ZONE_TOP = 21;
+    public const float DEAD_ZONE_BOT = -13;
+    public const float DEAD_ZONE_LEFT = -25;
+    public const float DEAD_ZONE_RIGHT = 25;
 
-    // Bird stats
+    // Classic stats
+    public const float CLASSIC_GRAVITY = 4.5f;
     public const float CLASSIC_FLAP_STRENGTH = 20;
+
+    // Free Flight stats
+    public const float FF_GRAVITY = 0;
+    public const float FF_FLAP_STRENGTH = 0.1f;
+    public const float FF_MAX_VELOCITY = 15;
 
 }

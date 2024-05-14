@@ -9,8 +9,6 @@ public class BirdScript : MonoBehaviour
     private bool birdIsAlive = true;
     private bool classicFlight = true;
     private float flapStrength, gravityStrength;
-    private float deadZoneTop = 21;
-    private float deadZoneBottom = -13;
 
     // Start is called before the first frame update
     void Start()
@@ -19,39 +17,45 @@ public class BirdScript : MonoBehaviour
 
         myRigidBody.gravityScale = gravityStrength;
         logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
-        classicFlight = !bool.Parse(PlayerPrefs.GetString(Constants.FREE_FLIGHT_KEY));
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (checkOutOfBounds()) {
-            endGame();
+        if (IsOutOfBounds()) {
+            EndGame();
         }
         if (birdIsAlive)
         {
-            birdMove();
+            BirdMove();
         }
     }
 
-    public bool isAlive()
+    public bool GetIsAlive()
     {
         return birdIsAlive;
     }
 
     private void getFromConstants()
     {
+        classicFlight = !bool.Parse(PlayerPrefs.GetString(Constants.FREE_FLIGHT_KEY));
+
         if (classicFlight)
         {
             flapStrength = Constants.CLASSIC_FLAP_STRENGTH;
             gravityStrength = Constants.CLASSIC_GRAVITY;
         }
+        else
+        {
+            flapStrength = Constants.FF_FLAP_STRENGTH;
+            gravityStrength = Constants.FF_GRAVITY;
+        }
     }
 
-    private void birdMove()
+    private void BirdMove()
     {
         if (classicFlight) {
-            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow))
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
             {
                 myRigidBody.velocity = Vector2.up * flapStrength;
             }
@@ -59,40 +63,45 @@ public class BirdScript : MonoBehaviour
 
         else
         {
-            if (Input.GetKeyDown(KeyCode.UpArrow))
+            if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
             {
-                myRigidBody.velocity = Vector2.up * 1;
+                myRigidBody.velocity += Vector2.up * flapStrength;
             } 
-            
-            else if (Input.GetKeyDown(KeyCode.DownArrow))
+            if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
             {
-                myRigidBody.velocity = Vector2.down * 1;
+                myRigidBody.velocity += Vector2.down * flapStrength;
             } 
-            
-            else if (Input.GetKeyDown(KeyCode.LeftArrow))
+            if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
             {
-                myRigidBody.velocity = Vector2.left * 1;
+                myRigidBody.velocity += Vector2.left * flapStrength;
             } 
-            
-            else if (Input.GetKey(KeyCode.RightArrow))
+            if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
             {
-                myRigidBody.velocity = Vector2.right * 1;
+                myRigidBody.velocity += Vector2.right * flapStrength;
+            }
+
+            if (myRigidBody.velocity.magnitude > Constants.FF_MAX_VELOCITY)
+            {
+                myRigidBody.velocity = myRigidBody.velocity.normalized * Constants.FF_MAX_VELOCITY;
             }
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        endGame();
+        EndGame();
     }
 
-    private bool checkOutOfBounds()
+    private bool IsOutOfBounds()
     {
-        return transform.position.y > deadZoneTop || transform.position.y < deadZoneBottom;
+        return transform.position.y > Constants.DEAD_ZONE_TOP ||
+            transform.position.y < Constants.DEAD_ZONE_BOT ||
+            transform.position.x > Constants.DEAD_ZONE_RIGHT ||
+            transform.position.x < Constants.DEAD_ZONE_LEFT;
 
     }
 
-    private void endGame()
+    private void EndGame()
     {
         logic.GameOver();
         birdIsAlive = false;

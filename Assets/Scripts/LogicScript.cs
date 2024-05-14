@@ -23,7 +23,7 @@ public class LogicScript : MonoBehaviour
     [ContextMenu("Increase Score")]
     public void AddScore(int scoreToAdd)
     {
-        if (bird.isAlive())
+        if (bird.GetIsAlive())
         {
             playerScore += scoreToAdd;
             scoreText.text = playerScore.ToString();
