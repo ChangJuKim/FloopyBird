@@ -2805,8 +2805,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4899b14e5d13a78489013e361387e6b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  classicHighScoreText: {fileID: 0}
-  ffHighScoreText: {fileID: 0}
+  classicHighScoreText: {fileID: 1317873204}
+  ffHighScoreText: {fileID: 2125092327}
 --- !u!114 &1111277471
 MonoBehaviour:
   m_ObjectHideFlags: 0
