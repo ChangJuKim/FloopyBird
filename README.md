@@ -13,10 +13,8 @@ Floopy bird is finished with version 2.0.0! I am now editing the UI to be more p
 5. Run Floopy Bird.exe
 
 ## Controls
-* Space bar to jump
-* Click "Play again" to play again
-Currently there is no way to close the game -- press windows key to see the taskbar at the bottom and right click the black and white box to close the window.
-
+* Classic mode: Space bar, W or up arrow to jump
+* Free Flight mode: WASD or arrow keys to move
 
 ## Patch Notes
 * Added menu screen and quit button
