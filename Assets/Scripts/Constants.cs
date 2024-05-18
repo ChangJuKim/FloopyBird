@@ -26,7 +26,7 @@ public static class Constants
 
     // Free Flight stats
     public const float FF_GRAVITY = 0;
-    public const float FF_FLAP_STRENGTH = 0.1f;
+    public const float FF_FLAP_STRENGTH = 15f;
     public const float FF_MAX_VELOCITY = 15;
 
 }

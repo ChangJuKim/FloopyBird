@@ -8,7 +8,7 @@ public class BirdScript : MonoBehaviour
     [SerializeField] private LogicScript logic;
     private bool birdIsAlive = true;
     private bool classicFlight;
-    private float flapStrength, gravityStrength;
+    public float flapStrength, gravityStrength;
 
     // Start is called before the first frame update
     void Start()
@@ -57,7 +57,7 @@ public class BirdScript : MonoBehaviour
         if (classicFlight) {
             if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
             {
-                myRigidBody.velocity = Vector2.up * flapStrength;
+                myRigidBody.velocity = Vector2.up * flapStrength * Time.deltaTime;
             }
         } 
 
@@ -65,19 +65,19 @@ public class BirdScript : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
             {
-                myRigidBody.velocity += Vector2.up * flapStrength;
+                myRigidBody.velocity += Vector2.up * flapStrength * Time.deltaTime;
             } 
             if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
             {
-                myRigidBody.velocity += Vector2.down * flapStrength;
+                myRigidBody.velocity += Vector2.down * flapStrength * Time.deltaTime;
             } 
             if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
             {
-                myRigidBody.velocity += Vector2.left * flapStrength;
+                myRigidBody.velocity += Vector2.left * flapStrength * Time.deltaTime;
             } 
             if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
             {
-                myRigidBody.velocity += Vector2.right * flapStrength;
+                myRigidBody.velocity += Vector2.right * flapStrength * Time.deltaTime;
             }
 
             if (myRigidBody.velocity.magnitude > Constants.FF_MAX_VELOCITY)
