@@ -1,10 +1,13 @@
 # FloopyBird
 My first Unity project and my first step in developing my own game! 
 
-5/14/2024
+## Notion link for more details:
+https://silk-tub-8b6.notion.site/Table-of-Contents-025af625f974474493fd309c905de564?pvs=4
+
+## 5/14/2024
 Floopy bird is finished with version 2.0.0! I am now editing the UI to be more palatable.
 
-**As of now, this game only runs on Windows. I will add support for Mac and Linux in the future.**
+**As of now, this game only runs on Windows. I will perhaps add support for Mac and Linux in the future.**
 
 ## Installation
 1. Go to https://drive.google.com/drive/folders/1__excmrXzOrz2GQzizv2UQcXUhKYe_q7?usp=sharing
